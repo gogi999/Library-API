@@ -5,6 +5,7 @@ dotenv.config();
 
 const indexRouter = require('./routes/index');
 const authorRouter = require('./routes/authors');
+const bookRouter = require('./routes/books');
 
 const app = express();
 
@@ -31,6 +32,7 @@ mongoose.connect(
 
 app.use('/', indexRouter);
 app.use('/authors', authorRouter);
+app.use('/books', bookRouter);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server has started on port ${port}...`));
